@@ -15,13 +15,13 @@ tags : [struct, union, 内存分配, 内存对齐]
 ### `union` 内存分配
 联合体，顾名思义，整个数据联合为一个整体，故其所有成员共享同一块内存区域。分配内存时，按照其数据成员中，占用内存最大的成员来分配最终内存大小。
 	
-
-    union data{
-      int a;    // int 占用内存最大的 4 byte
-      short b;  // 2 byte
-      char c;   // 1 byte
-    }
-
+```C
+union data{
+	int a;    // int 占用内存最大的 4 byte
+	short b;  // 2 byte
+	char c;   // 1 byte
+}
+```
 	
 `data` 所占的空间等于其最大的成员所占的空间，即 `int` 为 `4byte`。对 `union` 型的成员的存取都是相对于该联合体基地址的偏移量为 0 处开始， 也就是*联合体的访问不论对哪个变量的存取都是从 `union` 的首地址位置开始*。成员 `a`, `b`, `c` 共享这 `4byte` 内存。其各成员所占用情况，如下图所示：
 
@@ -71,18 +71,19 @@ tags : [struct, union, 内存分配, 内存对齐]
 
 #### 仅含有基本类型
 
-    struct data1{
-      int a;
-      char b;
-      short c;
-    };
+```C
+struct data1{
+	int a;
+	char b;
+	short c;
+};
 
-    struct data2{
-      char b;	
-      int a;  
-      short c;
-    };
-
+struct data2{
+	char b;	
+	int a;  
+	short c;
+};
+```
 
 - 规则1：在 `data1` 中，占内存最大的基本类型为 `int` ，故\\(w=4\\)。
 - 规则2：先分配 `int a`，分配最小单元为\\(w=4\\) byte， `a` 占用所分配的第0-3字节。再分配 `char b`, 已无剩余空间，于是再分配最小单元数 `4byte`。`b` 占第4个字节。还剩第5-7字节
@@ -96,18 +97,19 @@ tags : [struct, union, 内存分配, 内存对齐]
 
 #### 含有非基本类型
 
-    struct data1{
-      int a;      // 最大基本类型,则最小分配单元为4byte    | 0 [a ][a ][  ][  ] 3
-      char b[5];  // 非基本类型,其成员类型为char,占1byte  | 4 [b0][b1][b2][b3] 7
-      short c;                                         | 8 [b4][  ][c ][c ] 11
-    };
+```C
+struct data1{
+	int a;      // 最大基本类型,则最小分配单元为4byte   | 0 [a ][a ][  ][  ] 3
+	char b[5];  // 非基本类型,其成员类型为char,占1byte  | 4 [b0][b1][b2][b3] 7
+	short c;    //                                   | 8 [b4][  ][c ][c ] 11
+};
 
-    struct data2{
-      short s;
-      data1 d;  // 非基本类型，data1成员中最大基本类型为 int, 则最小分配单元为4 byte
-      char c; 
-    };
-
+struct data2{
+	short s;
+	data1 d;  // 非基本类型，data1成员中最大基本类型为 int, 则最小分配单元为4 byte
+	char c; 
+};
+```
 	
 仍然按照上述四条原则来分析:
 
@@ -118,26 +120,30 @@ tags : [struct, union, 内存分配, 内存对齐]
 
 对于某些数据结构，使用 `union` 与 `struct` 嵌套，有利于其成员的访问。如下 `pointXYZ` 所示:
 
-    union pointXYZ{
-      float data[3];
-      struct{
-        float x;
-        float y;
-        float z;
-      };
-    };
+```C
+union pointXYZ{
+	float data[3];
+	struct{
+		float x;
+		float y;
+		float z;
+	};
+};
+```
 
 当需使用 `x, y, z` 变量对其数据进行访问时，则提高代码可读性，某些情况下，对特定轴向进行数据分析时，使用 `x, y, z` 比 `data[0], data[1], data[2]` 更让人思路清晰。 当需要遍历点集中各个点数值等操作是，对其进行循环操作，则使用角标方式访问则更方便。 类似的有对于颜色的定义：
 
-    union colorRGBA{
-      uchar data[4];
-      struct{
-        uchar R;
-        uchar G;
-        uchar B;
-        uchar A;
-      };
-      int color;
-    };
+```C
+union colorRGBA{
+	uchar data[4];
+	struct{
+		uchar R;
+		uchar G;
+		uchar B;
+		uchar A;
+	};
+	int color;
+};
+```
 
 整个结构 `colorRGBA` 仅占用 `4byte`, 可以在不同的场合使用不同的方式来访问其值。

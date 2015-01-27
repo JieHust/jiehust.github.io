@@ -5,6 +5,15 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
+# configure the Markdown Processors, four options : maruku, rdiscount, redcarpet, kramdown(default)
+# for more information and each default settings of these processors, 
+# http://jekyllrb.com/docs/configuration/
+markdown: redcarpet
+
+# configure redcarpet setting
+redcarpet:
+  extensions: ["fenced_code_blocks", "tables", "no_intra_emphasis"]
+
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
@@ -25,7 +34,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://Jfck.github.io
+production_url : http://jiehust.github.io
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -80,9 +89,9 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : false
+    provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : jiehust
     livefyre :
       site_id : 123
     intensedebate :
@@ -100,7 +109,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-59014525-1'
     getclicky :
       site_id : 
     mixpanel :
