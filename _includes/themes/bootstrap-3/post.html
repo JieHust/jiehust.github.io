@@ -1,3 +1,12 @@
+{% if page.use_latex == true %} 
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% endif %}
+
 <div class="page-header">
   <h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
 </div>
@@ -43,5 +52,21 @@
     </ul>
     <hr>
     {% include JB/comments %}
+
+  {% if page.use_toc == true %} 
+  <!-- https://github.com/yijian166/md-toc.js -->    
+  <div class="toc" id="toc">
+  </div>
+  <script src="{{BASE_PATH}}/assets/tools/toc/md-toc.js"></script>
+  <script type="text/javascript">
+  new Toc( 'post',{
+      'level':3,
+      'top':200,
+      'class':'toc',
+      'targetId':'toc'
+  } );
+  </script>
+  {% endif %}
+
   </div>
 </div>

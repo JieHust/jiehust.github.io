@@ -29,6 +29,7 @@
   font-weight: bold; }
 
 /********************** add by lj **********************/
+
 /* Alignment for img*/
 .alignleft {
   display: inline;
@@ -45,6 +46,7 @@
   display: block;
   margin:auto;
 }
+
 /* code inside title */
 h1 code {font-size:38.5px;}
 h2 code {font-size:31.5px;}
@@ -58,6 +60,9 @@ table {
   border: 1px solid blue;
   margin:auto;
   text-align: center;}
+
+/* reformat blockquote */
+blockquote{padding:0 0 0 15px;margin:0 0 20px;border-left:5px solid #eeeeee;}blockquote p{margin-bottom:0;font-size:13px;font-weight:400;line-height:24px;}
 	
 /* code highlight by pygments */
 .hll { background-color: #ffffcc }

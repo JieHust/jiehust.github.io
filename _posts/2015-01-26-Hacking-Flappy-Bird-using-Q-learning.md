@@ -3,15 +3,9 @@ layout: post
 category : Machine Learning
 tagline: "Q-learning"
 tags : [flappy bird, AI, Q-learning, Reinforcement Learning]
+use_latex: true
+use_toc : true
 ---
-{% include JB/setup %}
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 ## Hacking Flappy Bird using Q-learning
 

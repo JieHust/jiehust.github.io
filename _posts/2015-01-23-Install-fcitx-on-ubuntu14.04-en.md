@@ -1,6 +1,6 @@
 ---
 layout: post
-category : Note
+category : Notes
 tagline: "中文输入法"
 tags : [ubuntu, fcitx, 中文输入法, 英文Ubuntu]
 ---

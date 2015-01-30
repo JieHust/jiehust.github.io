@@ -3,11 +3,9 @@ layout: post
 category : c/c++
 tagline: "内存分配"
 tags : [struct, union, 内存分配, 内存对齐]
+use_latex : true
+use_toc : true
 ---
-{% include JB/setup %}
-<script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 ## `union` 与 `struct` 内存分配
 在[Point Cloud Library（PCL）](http://pointclouds.org/documentation/tutorials/adding_custom_ptype.php)中自定义点（PointT）的类型时，为了利用SSE加速，需要满足特定内存对齐问题。在了解内存对齐之前，需了解对 `struct` 与 `union` 两种数据内存的分配问题。本文不讨论SSE加速以及内存对称问题，仅对 `struct` 与 `union` 两种数据以及两种数据类型的嵌套的内存分配问题做详细的分析。

@@ -9,34 +9,17 @@ tagline: I'm crazy, but not always!
 ## Latest Posts
 
 <ul class="posts">
-  {% for post in site.posts %}
+
+  {% for post in site.posts limit:10 %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
 
-
+For all the articles, click [here]({{BASE_PATH}}/archive.html)
 
 ## To-Do
 
-This page is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/Jfck)!
-
-
-## About me
-
-Institute for Pattern Recognition & Artificial Intelligence  
-Huazhong University of Sci. & Tech.   
-Luoyu Road 1037, Wuhan 430074, P.R.China  
-
-#### Education
-
-	- 2009.09 - 2013.06 Bachelor degree of Automation
-	- 2013.09 - 2016.06 Master degree of Pattern Recognition
-
-#### Skill
-
-	Languages : |************ Level Attained ************|
-	C/C++     : |********************************--------|
-	Python    : |*************************---------------|
+This page is still under construction. If you'd like to be added as a contributor, [please fork](http://github.com/JieHust)!
 
 
 
