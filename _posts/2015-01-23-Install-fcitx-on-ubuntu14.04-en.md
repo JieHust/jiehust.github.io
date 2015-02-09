@@ -4,9 +4,8 @@ category : Notes
 tagline: "中文输入法"
 tags : [ubuntu, fcitx, 中文输入法, 英文Ubuntu]
 ---
-{% include JB/setup %}
 
-## 英文 ubuntu 系统中安装 [fcitx](https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+### 英文 ubuntu 系统中安装 [fcitx](https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 
 - 卸载 ibus 输入法，安装 fcitx （小企鹅）输入法
 
@@ -28,9 +27,9 @@ tags : [ubuntu, fcitx, 中文输入法, 英文Ubuntu]
 
 - 设置fcitx为默认的输入框架
 
-> 设置为默认输入法，以前一直使用的是 `im-switch`，但事实上，`im-switch` 已经被默认的系统包给取代了，安装 `im-switch` 会导致系统的 language support 消失，如果安装过请先卸载 `im-switch`，然后安装 `im-config` 与 `language-selector-gnome`，这样系统的 language support 就恢复了
+		在 language support 中， 设置 fcitx 为默认输入法
 
-        在 language support 中， 设置 fcitx 为默认输入法
+> 设置为默认输入法，以前一直使用的是 `im-switch`，但事实上，`im-switch` 已经被默认的系统包给取代了，安装 `im-switch` 会导致系统的 language support 消失，如果安装过请先卸载 `im-switch`，然后安装 `im-config` 与 `language-selector-gnome`，这样系统的 language support 就恢复了
 
 
 - fcitx中加入已安装的输入法
@@ -39,9 +38,9 @@ tags : [ubuntu, fcitx, 中文输入法, 英文Ubuntu]
 
 - 重装 `unity-control-center`
 
-> 由于卸载了 IBus，其依赖包 `unity-control-center`也被卸载掉了。需重新安装
+		sudo apt-get install unity-control-center
 
-        sudo apt-get install unity-control-center
+> 由于卸载了 IBus，其依赖包 `unity-control-center`也被卸载掉了。需重新安装
 
 ---
 

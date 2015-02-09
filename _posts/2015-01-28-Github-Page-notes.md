@@ -6,7 +6,7 @@ tags : [Jekyll, markdown, latex, highlighter]
 use_toc : true
 ---
 
-本文用于记录使用 Jekyll 以及 Github Pages 搭建个人博客时常用一些技巧以及常见的一些问题。关于[如何搭建](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)个人博客以及其[工作原理](http://jekyllbootstrap.com/lessons/jekyll-introduction.html)可以参考 [Jekyll Bootstrap](http://jekyllbootstrap.com)。对于完全不同前端技术的同学（像我一样的同学 - -||），可以先在 [codecademy](http://www.codecademy.com/) 学习关于 html 以及 css 的基本知识即可。
+本文用于记录使用 Jekyll 以及 Github Pages 搭建个人博客时常用一些技巧以及常见的一些问题。关于[如何搭建](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)个人博客以及其[工作原理](http://jekyllbootstrap.com/lessons/jekyll-introduction.html)可以参考 [Jekyll Bootstrap](http://jekyllbootstrap.com)。对于完全不懂前端技术的同学（像我一样的同学 - -||），可以先在 [codecademy](http://www.codecademy.com/) 学习关于 html 以及 css 的基本知识即可。
 
 ### 使用 Latex 
 
@@ -14,7 +14,7 @@ use_toc : true
 <script type="text/javascript" src="path-to-mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
 
-Mathjax 默认独占一行的公式为 `$$...$$` 和 `\[...\]`，行内公式为 `\(...\)`,而用习惯了 latex 中函内公式 `$...$` 可以对 Mathjax 进行[配置](http://docs.mathjax.org/en/latest/options/tex2jax.html#configure-tex2jax)，如下：
+Mathjax 默认行间公式为 `$$...$$` 和 `\[...\]`，行内公式为 `\(...\)`，而用习惯了 latex 行内公式 `$...$` 可以对 Mathjax 进行[配置](http://docs.mathjax.org/en/latest/options/tex2jax.html#configure-tex2jax)，如下：
 
 ```html
 <script type="text/x-mathjax-config">
@@ -149,5 +149,5 @@ markdown 对图片的支持过于简单，可以通过 html 方式来添加对�
 **添加图片：**
 
 ```html
-<img class="aligncenter" src="path_to/image.jpg" alt="Drawing" style="width: 300px;" align="center"/>
+<img class="aligncenter" src="path_to/image.jpg" alt="name" style="width: 300px;" align="center"/>
 ```
