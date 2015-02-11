@@ -8,6 +8,48 @@ use_toc : true
 
 本文用于记录使用 Jekyll 以及 Github Pages 搭建个人博客时常用一些技巧以及常见的一些问题。关于[如何搭建](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)个人博客以及其[工作原理](http://jekyllbootstrap.com/lessons/jekyll-introduction.html)可以参考 [Jekyll Bootstrap](http://jekyllbootstrap.com)。对于完全不懂前端技术的同学（像我一样的同学 - -||），可以先在 [codecademy](http://www.codecademy.com/) 学习关于 html 以及 css 的基本知识即可。
 
+
+### 使用 Jekyll
+
+为了能够在本地调试时与最终 github pages 上显示的结果相同，需要配置与 github 的环境。可以阅读 github 给出的[官方指导来配置](https://help.github.com/articles/using-jekyll-with-pages/)。
+
+配置中遇到的问题：
+
+**Problem 1 : 使用 gem 来安装包时，提示权限问题**
+
+> 官方建议：最好不要使用超级权限来安装 gem 包。
+
+此时可以在环境变量中设定 GEM_HOME 来告之 gem 应该安装在什么位置。此时别忘了把对应的 bin 加入到环境变量中去。具体步骤如下：
+
+**安装 ruby**
+
+```
+sudo apt-get install ruby ruby-dev
+```
+
+**创建安装文件夹**
+
+```
+mkdir -p /home/jie/lib/ruby/gems
+```
+
+**加入环境变量 GEM_HOME**
+
+在 `.bashrc` 中加入
+
+```
+export GEM_HOME=/home/jie/lib/ruby/gems
+export PATH=$GEM_HOME/bin:$PATH
+```
+
+**Problem 2 : Could not find a JavaScript runtime**
+
+安装 `nodejs`
+
+```
+sudo apt-get install nodejs
+```
+
 ### 使用 Latex 
 
 ```html
